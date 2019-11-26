@@ -1,0 +1,64 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id": "1d664fec-e878-44e4-bb5a-2332f66bd599",
+  "name": "PostgresExecuteSQLScript",
+  "friendlyName": "Postgres Execute SQL Script",
+  "description": "Execute SQL scripts against a Postgres database.",
+  "helpMarkDown": "",
+  "category": "Utility",
+  "author": "Nicklas Millard",
+  "version": {
+    "Major": 0,
+    "Minor": 3,
+    "Patch": 1
+  },
+  "instanceNameFormat": "Execute script on Postgres database",
+  "inputs": [
+    {
+      "name": "dbUsername",
+      "type": "string",
+      "label": "Postgres Database username",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Username of the user that will run the script."
+    },
+    {
+      "name": "dbPassword",
+      "type": "string",
+      "label": "Postgres Database password",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "dbServer",
+      "type": "string",
+      "label": "Postgres Database Server",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "dbName",
+      "type": "string",
+      "label": "Postgres Database Name",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Name of database to run the script against."
+    },
+    {
+      "name": "scriptPath",
+      "type": "filePath",
+      "label": "Select script from artifact directory.",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Provide the path to where the script is located. Example: $(System.DefaultWorkingDirectory)/drop/script.sql",
+      "properties": {
+        "EditableOptions": "True"
+      }
+    }
+  ],
+  "execution": {
+    "Node10": {
+      "target": "index.js"
+    }
+  }
+}

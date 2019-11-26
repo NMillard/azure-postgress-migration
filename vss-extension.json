@@ -1,0 +1,32 @@
+{
+  "manifestVersion": 1,
+  "id": "build-release-task",
+  "name": "Nicklas Millard postgres execute script",
+  "version": "0.3.1",
+  "publisher": "Nicklas-Millard",
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "Run scripts against a prostgres database",
+  "categories": ["Azure Pipelines"],
+  "icons": {
+    "default": "images/icon.png"
+  },
+  "files": [
+    {
+      "path": "buildAndReleaseTask"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "custom-build-release-task",
+      "type": "ms.vss-distributed-task.task",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "properties": {
+        "name": "buildAndReleaseTask"
+      }
+    }
+  ]
+}

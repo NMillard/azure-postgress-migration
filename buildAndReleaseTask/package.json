@@ -1,0 +1,20 @@
+{
+  "name": "postgresscriptexecutor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicklas Millard",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^12.12.11",
+    "@types/pg": "^7.11.2",
+    "@types/q": "^1.5.2"
+  },
+  "dependencies": {
+    "azure-pipelines-task-lib": "^2.9.3",
+    "pg": "^7.14.0"
+  }
+}
